@@ -1810,3 +1810,43 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/* iOS ve Safari için özel düzeltmeler */
+
+/* Hero Section - iOS arka plan sorunu */
+@supports (-webkit-touch-callout: none) {
+  .hero {
+    background: #50c878 !important;
+  }
+}
+
+/* Hero içeriğinin görünmemesi sorunu */
+@media screen and (max-width: 768px) {
+  .hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+  }
+}
+
+/* Footer - iOS görünmeme sorunu */
+@supports (-webkit-touch-callout: none) {
+  .footer {
+    background: #50c878 !important;
+    color: #ffffff !important;
+    display: block !important;
+  }
+}
+
+/* iOS Safari için z-index hataları */
+@supports (-webkit-overflow-scrolling: touch) {
+  .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+  }
+}
